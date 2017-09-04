@@ -1,0 +1,11 @@
+<h1>Wordgame#game</h1>
+<p>Find me in app/views/wordgame/game.html.erb</p>
+<p><%=@grid %></p>
+<form action="/score" method="get">
+ <!--  <%= hidden_field_tag :authenticity_token, form_authenticity_token %> -->
+  <input type="text" name="attempt" placeholder="attempt">
+  <input type="hidden" value="#{<%= @grid.to_s %>}"  name="grid">
+  <input type="hidden" value="#{<%= @start_time %>}" name="start_time">
+  <input type="submit">
+
+</form>
